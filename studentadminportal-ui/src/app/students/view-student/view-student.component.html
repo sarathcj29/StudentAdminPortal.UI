@@ -27,7 +27,9 @@
                 matInput
                 [(ngModel)]="student.firstName"
                 name="firstName"
+                required
               />
+              <mat-error>First Name cannot be empty</mat-error>
             </mat-form-field>
           </div>
           <div class="col-xs-6">
@@ -38,7 +40,9 @@
                 matInput
                 [(ngModel)]="student.lastName"
                 name="lastName"
+                required
               />
+              <mat-error>Last Name cannot be empty</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -51,7 +55,9 @@
                 [matDatepicker]="picker"
                 [(ngModel)]="student.dateOfBirth"
                 name="dateOfBirth"
+                required
               />
+              <mat-error>Date Of Birth cannot be empty</mat-error>
               <mat-datepicker-toggle
                 matSuffix
                 [for]="picker"
@@ -69,7 +75,9 @@
                 matInput
                 [(ngModel)]="student.email"
                 name="email"
+                required
               />
+              <mat-error>Email cannot be empty</mat-error>
             </mat-form-field>
           </div>
           <div class="col-xs-6">
@@ -80,7 +88,9 @@
                 matInput
                 [(ngModel)]="student.mobile"
                 name="mobile"
+                required
               />
+              <mat-error>Mobile Number cannot be empty</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -119,7 +129,9 @@
                 matInput
                 [(ngModel)]="student.address.postalAddress"
                 name="postalAddress"
+                required
               ></textarea>
+              <mat-error>Postal Address cannot be empty</mat-error>
             </mat-form-field>
           </div>
         </div>
