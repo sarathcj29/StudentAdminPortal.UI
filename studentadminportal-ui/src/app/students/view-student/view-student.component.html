@@ -1,6 +1,6 @@
 <div class="page-header">
   <div class="container">
-    <h1>View</h1>
+    <h1>{{ header }}</h1>
   </div>
 </div>
 
@@ -125,7 +125,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-            <div class="row between-xs">
+            <div class="row between-xs" *ngIf="!isNewStudent">
               <button mat-raised-button color="primary" (click)="onUpdate()">
                 Save
               </button>
@@ -133,12 +133,34 @@
                 Delete
               </button>
             </div>
+            <div class="row between-xs" *ngIf="isNewStudent">
+              <button mat-raised-button color="primary" (click)="onAdd()">
+                Add
+              </button>
+            </div>
           </div>
         </div>
       </form>
     </div>
     <div class="col-xs-6">
-      <!-- Profile Image -->
+      <div class="row center-xs">
+        <div class="image-container">
+          <img [src]="displayProfileImgUrl" alt="Profile Image" />
+        </div>
+      </div>
+      <div class="row center-xs mt-1">
+        <div class="col-xs-12" *ngIf="!isNewStudent">
+          <input
+            hidden
+            type="file"
+            #imageUpload
+            (change)="uploadImage($event)"
+          />
+          <button mat-stroked-button (click)="imageUpload.click()">
+            Upload Image
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
